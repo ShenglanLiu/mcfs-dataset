@@ -1,0 +1,462 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:16px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 800px;
+	}
+	
+	h1 {
+		font-weight:300;
+	}
+		
+	h2 {
+		font-weight:300;
+		font-size: 22px;
+		text-align: left;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		        15px 15px 0 0px #fff, /* The fourth layer */
+		        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		        20px 20px 0 0px #fff, /* The fifth layer */
+		        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		        25px 25px 0 0px #fff, /* The fifth layer */
+		        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+
+	pre {
+    text-align: left;
+    white-space: pre;
+	background-color: ghostwhite;
+	border: 1px solid #CCCCCC;
+	padding: 10px 20px;
+	margin: 10px;
+    tab-size:         4; /* Chrome 21+, Safari 6.1+, Opera 15+ */
+    -moz-tab-size:    4; /* Firefox 4+ */
+    -o-tab-size:      4; /* Opera 11.5 & 12.1 only */
+  	}
+
+</style>
+
+<html>
+  <head>
+		<title>Temporal Segmentation of Fine-grained Semantic action: A Motion-Centered Figure Skating Dataset</title>
+		<meta property="og:image" content=""/>
+		<meta property="og:title" content="Temporal Segmentation of Fine-grained Semantic action: A Motion-Centered Figure Skating Dataset" />
+  </head>
+
+  <body>
+    <br>
+          <center>
+			  <span style="font-size:36px">Temporal Segmentation of Fine-grained Semantic action:		
+				    A Motion-Centered Figure Skating Dataset</span>
+	  		  <table align=center width=600px>
+	  			  <tr>
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<span style="font-size:24px">Shenglan Liu</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<span style="font-size:24px">Aibin Zhang</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<span style="font-size:24px">Yunheng Li</a></span>
+		  		  		</center>
+		  		  	  </td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px">Jian Zhou</a></span>
+						</center>
+					</td>
+
+				</table>
+				<table align=center width=600px>
+	  			  <tr>
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<span style="font-size:24px">Li Xu</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<span style="font-size:24px">Zhuben Dong</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align=center width=100px>
+	  					<center>
+	  						<span style="font-size:24px">Renhao Zhang</a></span>
+		  		  		</center>
+		  		  	  </td>
+
+				</table>
+          		<!-- <span style="font-size:30px">ECCV 2016.</span> -->
+
+			  <table align=center width=600px>
+				  <tr>
+					  <td align=center width=100px>
+						<center>
+							<span style="font-size:20px"><a href="https://www.dlut.edu.cn/">Dalian University of Technology</a></span>
+						</center>
+					  </td>
+			  </table>
+		
+          </center>
+
+   		  <br><br>
+		  <hr>
+
+  		  <br>
+  		  <table align=center width=720px>
+  			  <tr>
+  	              <td width=400px>
+  					<center>
+  	                	<a href="./resources/image/teaser.png"><img class="rounded" src = "./resources/image/teaser.png" width="800px"></img></href></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <td width=400px>
+  					<center>
+  	                	<span style="font-size:14px"><i>
+							A video in MCFS. The labels of this video belong to the subset-level.</i>
+					</center>
+  	              </td>
+
+  		  </table>
+      	  <br><br>
+
+
+		  <hr>
+
+  		  <table align=center width=720px>
+				<center><h1>Abstract</h1></center>
+		  </table>
+		  <center>
+			<span>
+				Temporal Action Segmentation (TAS) has achieved great success in many fields such as exercise rehabilitation, movie
+				editing, etc. Currently, task-driven TAS is a central topic in
+				human action analysis. However, motion-centered TAS, as
+				an important topic, is little researched due to unavailable
+				datasets. In order to explore more models and practical applications of motion-centered TAS, we introduce a MotionCentered Figure Skating (MCFS) dataset in this paper. Compared with existing temporal action segmentation datasets,
+				the MCFS dataset is fine-grained semantics, specialized and
+				motion-centered. Besides, RGB-based and Skeleton-based
+				features are provided in the MCFS dataset. Experimental results show that existing state-of-the-art methods are difficult
+				to achieve excellent segmentation results (including accuracy,
+				edit and F1 score) in the MCFS dataset. This indicates that
+				MCFS is a challenging dataset for motion-centered TAS.
+		  	</span>
+		  </center>
+  		  <br><br>
+		  <hr>
+
+		  <table align=center width=720px>
+			<center><h1>Demo video</h1></center>
+			<tr>
+				<table align=center width=720px>
+					<tr>
+						<td align=center width=720px>
+							<iframe width="600" height="320" src="https://www.youtube.com/embed/sT3jPFqzwDg" frameborder="0" allowfullscreen></iframe>
+						</td>
+					  </tr>
+					<tr>
+						<td align=center width=720px>
+						  <span style="font-size:14px"><i>
+							Temporal Action Segmentation Video（MCFS)</i>
+						</span>
+						   </td>
+					  </tr>
+					 </table>
+			  </tr>
+		  </table>
+		   <br><br>
+		  <hr>
+
+		  <table align=center width=720px>
+			<center><h1>Dataset hierarchy</h1></center>
+			<tr>
+				<td width=400px>
+				  <center>
+					  <a><img class="rounded" src = "./resources/image/hierarchy.png" width="800px"></img></a><br>
+				</center>
+				</td>
+			</tr>
+				<td width=400px>
+				  <center>
+					  <span style="font-size:14px"><i>
+						A three level semantics annotations and collect 4 sets (e.g. Spin), 22 subsets (e.g. CamelSpin) and 130 elements (e.g. CamelSpin3) at each annotation level.
+						</i>
+				</center>
+				</td>
+
+		  </table>
+	      <br><br>
+		  <hr>
+
+
+		  <table id='analysis' align=center width=720px>
+			<center><h1>Experiments</h1></center>
+			<table>
+			<center><h2> (1) Comparison with the state-of-the-art on 50Salads,
+				GTEA, and the Breakfast dataset. (* All data obtained from
+				(Farha and Gall 2019) and (Chen et al. 2020a)). </h2></center>
+			<tr>
+				  <td width=400px>
+				  <center>
+					  <a><img class="rounded" src = "./resources/image/50Salads.png" width="500px"></img></a><br>
+				</center>
+				</td>
+			</tr>
+			<tr>
+				<td align=center width=720px>
+				  <span style="font-size:14px"><i>
+					Comparison with the state-of-the-art on 50Salads, GTEA, and the Breakfast dataset. (* All data obtained from (Farha and Gall 2019) and (Chen et al. 2020a)).</i>
+				</span>
+				</td>
+			</tr>
+			</table>
+
+			<br>
+
+			<table>
+			<center><h2> (2) Element-level action recognition results of representative methods. Specifically, results of recognizing element categories across all set, within a subset, and within an element. </h2></center>
+			<tr>
+				  <td width=400px>
+				  <center>
+					  <a><img class="rounded" src = "./resources/image/MCFS.png" width="500px"></img></a><br>
+				</center>
+				</td>
+			</tr>
+			<tr>
+				<td align=center width=720px>
+				  <span style="font-size:14px"><i>
+					Element-level action recognition results of representative methods. Specifically, results of recognizing element categories across all set, within a subset, and within an element.</i>
+				</span>
+				</td>
+			</tr>
+			</table>
+
+			<br>
+			<table>
+				<center><h2> (3) Qualitative results for the TAS task on MCFS. </h2></center>
+				<tr>
+					  <td width=400px>
+					  <center>
+						  <a><img class="rounded" src = "./resources/image/results.png" width="800px"></img></a><br>
+					</center>
+					</td>
+				</tr>
+				<tr>
+					<td align=center width=720px>
+					  <span style="font-size:14px"><i>
+						Qualitative results for the TAS task on MCFS.</i>
+					</span>
+					</td>
+				</tr>
+				</table>
+	
+				<br>
+
+					
+		</table>
+	      <br><br>
+		  <hr>
+
+
+		  <table id="download" align=center width=720px>
+			<center><h1>Download</h1></center>
+			<tr>
+				<td width=300px>
+					<center>
+						<span style="font-size:24px">RGB</span><br>
+						<br>
+						<img class="rounded" onmouseover="this.src='./resources/image/dataset_icon.jpg';" onmouseout="this.src='./resources/image/dataset_icon.jpg';" src = "./resources/image/dataset_icon.jpg" height = "150px"><br><br>
+						<span style="font-size:16px">question annotation (json)</a></span><br>
+						<span style="font-size:16px">set-level category list (txt)</a></span><br>
+
+					<span style="font-size:16px"></span>
+					</center>
+				</td>
+				<td width=300px>
+					<center>
+						<span style="font-size:24px">I3D</span><br>
+						<br>
+						<img class="rounded" onmouseover="this.src='./resources/image/dataset_icon.jpg';" onmouseout="this.src='./resources/image/dataset_icon.jpg';" src = "./resources/image/dataset_icon.jpg" height = "150px"><br><br>
+						<span style="font-size:16px">MCFS-4 I3D Dataset</a></span><br>
+						<span style="font-size:16px">MCFS-22 I3D Dataset</a></span><br>
+						<span style="font-size:16px">MCFS-130 I3D Dataset</a></span><br>
+					<span style="font-size:16px"></span>
+					</center>
+				</td>
+				<td width=300px>
+					<center>
+						<span style="font-size:24px">Skeleton</span><br><br>
+						<img class="rounded" onmouseover="this.src='./resources/image/dataset_icon.jpg';" onmouseout="this.src='./resources/image/dataset_icon.jpg';" src = "./resources/image/dataset_icon.jpg" height = "150px"><br><br>
+						<span style="font-size:16px">MCFS-4 Skeleton Dataset</a></span><br>
+						<span style="font-size:16px">MCFS-22 Skeleton Dataset</a></span><br>
+						<span style="font-size:16px">MCFS-130 Skeleton Dataset</a></span><br>
+					<span style="font-size:16px"></span>
+					</center>
+				</td>
+			
+
+			</tr>
+		   </table>
+
+   
+
+
+		 
+
+
+  		  </table>
+
+			<br><br>
+			<hr>
+  
+		  	
+  		  <table align=center width=720px>
+  			  <tr>
+  	              <td width=400px>
+  					<left>
+	  		  <center><h1>Acknowledgements</h1></center>
+				We sincerely thank the outstanding annotation team for their excellent work.
+				This work is partially supported by SenseTime Collaborative Grant on Large-scale Multi-modality Analysis
+				and the General Research Funds (GRF) of Hong Kong (No. 14203518 and No. 14205719).
+				The template of this webpage is borrowed from <a href=https://richzhang.github.io/colorization/>Richard Zhang</href><a>.
+			</left>
+		</td>
+			 </tr>
+		</table>
+
+		<br><br>
+		<hr>
+
+		<table align=center width=720px>
+			<tr>
+				<td width=400px>
+				  <left>
+			<center><h1>Contact</h1></center>
+			For further questions and suggestions, please contact Dian Shao (<a href='liusl@mail.dlut.edu.cn'>liusl@mail.dlut.edu.cn</a>).
+			
+			
+		</left>
+	</td>
+		 </tr>
+	</table>
+
+		<br><br>
+
+<script>
+	
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75863369-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+              
+</body>
+</html>
+ 
